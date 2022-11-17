@@ -1,0 +1,14 @@
+.banner{
+    color: #282c34;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+}
+input {
+    margin-bottom: 30px;
+}
+html {
+    background-image: url('https://media2.giphy.com/media/l3vRnoppYtfEbemBO/giphy.gif?cid=ecf05e47wp5ucjcndj9b7389g3c7xo092nhwnxniz93s8dmv&rid=giphy.gif&ct=g');
+    background-size: cover;
+}

@@ -1,24 +1,55 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import './App.css';
 
-function App() {
+import Home from './components/Home';
+import Search from './components/Search';
+import WishList from './components/WishList';
+
+function App(effect, deps) {
+
+  const [userName,setUserName] = useState("")
+  const [ProductsState,setProductsState] = useState([])
+  const [Wishlist,setWishlist] = useState([])
+  const products = ["lorem", "ipsum","4090 RTX", "Hadar", "Nir", "Matan","aviv"]
+  const [SV, setSV] = useState("")
+
+
+  const useFetch = () => {
+
+      fetch("https://www.googleapis.com/books/v1/volumes?q=" + SV)
+          .then((res)=> res.json())
+          .then((productArray) => {
+            console.log(productArray)
+            setProductsState(productArray.items)
+
+          })
+
+  }
+
+
+  // const hasProducts = ProductsState.length > 0
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/search" element={<Search username={userName} search={ProductsState} SV={SV} setSV={setSV} useFetch={useFetch}/>}>
+          </Route>
+
+          <Route path="/wishlist" element={<WishList/>}>
+          </Route>
+          <Route path="/" element={<Home username={userName} setUsername={setUserName}/>}>
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

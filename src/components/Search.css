@@ -1,0 +1,12 @@
+.item {
+    border-radius: 30px;
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+    padding: 15px;
+    width: 50%;
+    background-color: white;
+}
+.item img {
+    box-shadow: #081f2d;
+}
