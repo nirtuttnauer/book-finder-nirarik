@@ -1,12 +1,22 @@
 .item {
+
     border-radius: 30px;
     justify-content: center;
     align-content: center;
     margin: 15px;
     padding: 15px;
     width: 50%;
-    background-color: white;
+    background-color:rgba(255, 255, 255, 0.8);
 }
 .item img {
-    box-shadow: #081f2d;
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.15);
+    margin: 15px;
+}
+.item img:hover {
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.15);
+    margin: 15px;
+    transform: scale(1.1);
+}
+.item h1, h2, h3 , p {
+    margin: 0;
 }

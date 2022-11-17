@@ -11,6 +11,8 @@ import './App.css';
 import Home from './components/Home';
 import Search from './components/Search';
 import WishList from './components/WishList';
+import Creators from "./components/Creators";
+import BookInfo from "./components/BookInfo";
 
 function App(effect, deps) {
 
@@ -37,17 +39,21 @@ function App(effect, deps) {
   // const hasProducts = ProductsState.length > 0
 
   return (
+
     <Router>
+        {/*<Creators/>*/}
       <div>
         <Routes>
           <Route path="/search" element={<Search username={userName} search={ProductsState} SV={SV} setSV={setSV} useFetch={useFetch}/>}>
           </Route>
-
           <Route path="/wishlist" element={<WishList/>}>
           </Route>
           <Route path="/" element={<Home username={userName} setUsername={setUserName}/>}>
           </Route>
+            <Route path="/bookinfo" element={<BookInfo productstate={ProductsState}/>}>
+            </Route>
         </Routes>
+
       </div>
     </Router>
   );

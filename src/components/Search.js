@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import "./Search.css"
+import {useNavigate} from "react-router-dom";
 
 const Search = ({username, search, SV, setSV, useFetch}) => {
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         if (shouldSearch){
@@ -30,13 +32,20 @@ const Search = ({username, search, SV, setSV, useFetch}) => {
 
             </div>
             <div>
-                <div>
+                <div style={{}}>
                     {filteredProducts?.length && filteredProducts?.map((book) => {
                         return (
                             <div className={"item"} key={book.id}>
                                 <h3>{book.volumeInfo.title}</h3>
                                 <p>{book.volumeInfo.authors}</p>
-                                <img src={book.volumeInfo?.imageLinks?.thumbnail}/>
+
+                                <div style={{flexDirection:"row"}}>
+                                    <img src={book.volumeInfo?.imageLinks?.thumbnail}/>
+                                    <div>
+                                        <button>Show More</button>
+                                        <button>Add To Wish List</button>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })}

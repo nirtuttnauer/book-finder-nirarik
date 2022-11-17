@@ -24,8 +24,10 @@ button {
     color: white;
     font-size: 15px;
     padding: 10px 45px;
+    margin: 5px;
     cursor: pointer;
     transition: 0.3s;
+    width: auto;
 }
 
 button:hover {
@@ -43,7 +45,7 @@ input {
     min-width: 500px;
     box-sizing: border-box;
     padding: 30px 25px;
-    background-color: white;
+    background-color:rgba(255, 255, 255, 0.7);
     border-radius: 40px;
     margin: 0px 0;
     font-size: 1rem;
@@ -52,4 +54,7 @@ input {
 img {
     height: auto;
     border-radius: 8px;
+}
+h1,h3 {
+    align-content: center;
 }

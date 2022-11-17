@@ -23,7 +23,7 @@ const Home = ({setUsername , username}) => {
 
     }
 
-    return (<div className={"banner"} style={{marginTop: "50%"}}>
+    return (<div className={"banner"} style={{marginTop: "40%"}}>
         <h1>BOOK.ly</h1>
         <div>
             <input type={"text"} placeholder="What's your name?" onChange={handleInputUsername}/>
